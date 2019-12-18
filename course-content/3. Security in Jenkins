@@ -1,0 +1,67 @@
+Managing Security
+-----------------
+
+===> Cecurity with Jenkins configuration
+===> Configuring Authorization - 
+	Matrix-based security
+===> Project-based Matrix Authorization 
+===> OpenLDAP integration
+===> Active Directory integration
+===> OWASP Zed Attack Proxy integration
+===> 500 errors and XSS attacks through 	fuzzing
+===> Avoiding sign-up bots with JCaptcha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1.  Manage jenkins ==> Manage Users
+Step 2.  Manage Jenkins ==> Configure Global Security ==> Security Realm ==> Jenkins Own User Database ==> Project Based Matrix
+Step 3.  Job ==> Configure ==> General ==> Enable project based Security
+
+
+
+
+
+
+Jenkins on http / https
+-----------------------
+
+You can enable Jenkin via HTTPS with following steps,
+
+Step1: Create Certificate using java
+
+keytool -genkey -keyalg RSA -alias "localhost" -keystore "localhost.jks" -validity 365 -keysize 2048 -dname "CN=localhost, OU=OU_name, O=OU_name, L=city, ST=State_name, C=two_letter_country_code" -ext SAN=dns:localhost,ip:127.0.0.1 -storepass changeit
+
+Step2: Export p12 Public Certificate from key-store file
+
+keytool -importkeystore -srckeystore "localhost.jks" -storepass changeit -destkeystore "localhost.p12" -srcstoretype JKS -deststoretype PKCS12 -deststorepass changeit
+
+Step3: Host Jenkins using key-store (JKS) file
+
+java -jar jenkins.war --httpsPort=8082 --httpPort=-1 --httpsKeyStore="/home/umesh/Desktop/localhost.jks" --httpsKeyStorePassword=changeit
+
+Step4: Import the Certificate into Browser
+
+You may have question like why we have exported p12 certificate...well, this certificate we are going to import into our browser where we access Jenkins. The same p12 certificate can be shared between multiple users. For example in Chrome go to Setting>Search - "Manage Certificate" and click on "Manage Certificate" you will get an "Certificate" window. Import the certificate into each tab (Personnel, Other People, Intermediate Certificate Authorities, Trusted Root Certification Authorities, Trusted Pubilshers and Untrusted Publishers)
+
+
+===============================
+
+openssl pkcs12 -inkey example.net.key -in example.net.pem -export -out keys.pkcs12
+
+keytool -importkeystore -srckeystore keys.pkcs12 -srcstoretype pkcs12 -destkeystore /var/lib/jenkins/jenkins.jks
+
+
+
+
+

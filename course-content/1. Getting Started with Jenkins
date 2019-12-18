@@ -1,0 +1,320 @@
+An Introduction To Jenkins
+--------------------------
+
+Presented By : 
+
+Umesh Sharma 
+
+
+
+
+
+
+
+
+
+
+
+Agenda 
+
+What is Jenkins - an Introduction. 
+What is Continuous Integration.
+Installing and Configuring Jenkins. 
+Managing Security.
+Creating a job with Jenkins. 
+Hands on CI with Jenkins. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Jenkins - an Introduction
+---------------------------------
+
+Jenkins is the leading open source continuous integration tool.
+
+Jenkins was originally developed as the Hudson project.
+
+Hudson's creation started in summer of 2004 at Sun Microsystems.
+
+In November 2010, an issue arose in the Hudson community with respect to the infrastructure used. 
+
+Negotiations were held between the principal project contributors and Oracle; a key sticking point was the control of the name "Hudson" itself, which Oracle claimed, and on January 11, 2011, a proposal was made to change the project name from "Hudson" to "Jenkins".
+
+
+
+
+
+
+
+
+
+
+
+
+What is Jenkins
+---------------
+On February 1, 2011, Oracle said that they intended to continue development of Hudson, and considered Jenkins a fork rather than a rename. As of December 2019, the Jenkins organization on Git Hub had 638 project members and around 1,800 public repositories, compared with Hudson's 32 project members and 17 public repositories.
+
+Hudson is not maintained anymore, Jenkins is the replacement for it. 
+
+Jenkins builds and tests our software continuously and monitors the execution and status of remote jobs, making it easier for team members and users to regularly obtain the latest stable code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Continuous Integration
+------------------------------
+
+Continuous Integration is a development practice in which developers are required to commit changes to source code in a shared repository several times a day. 
+
+Every commit is then build and this allows the teams to detect problems early.
+
+It then bring following benefits to software development: 
+	1) Catch issues fast.
+	2) Everyone can see what’s happening. 
+	3) Automate the build. 
+	4) Continuous Integration leads to Continuous Deployment 		   allowing us to deliver software more rapidly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Continuous Integration
+------------------------------
+
+“Continuous Integration doesn’t get rid of bugs, but it does make them dramatically easier to find and remove.” - Martin Fowler, chief scientist,ThoughtWorks.
+
+Jenkins is just a framework, it achieves Continuous Integration by the help of Plugins. 
+
+It provides support for over 1500 Plugins .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installing and Configuring Jenkins
+----------------------------------
+
+JDK JDK 1.8 or above 
+Memory 4 GB RAM (recommended) 
+8 GB Disk Space
+Operating System Version Jenkins can be installed on 
+	Windows, 
+	Ubuntu/Debian, 
+	Red Hat/Fedora/CentOS, 
+	Mac OS X, openSUSE, FReeBSD, OpenBSD, Gentoo. 
+Java Container The WAR file can be run in any container that supports Servlet 2.4/JSP 2.0 or later.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installing and Configuring Jenkins
+----------------------------------
+
+Download Jenkins: 
+	Open the official website of Jenkins : 
+		https://jenkins.io/index.html 
+
+	Click on Download Jenkins and download the LTS Release.
+
+From the command prompt, browse to the directory where the jenkins.war file is present. 
+
+Run the following command: 
+
+java -jar jenkins.war 
+
+Extraction of the war file is done by an embedded webserver called winstone. 
+
+Jenkins by default runs on port 8080, but we can run it on different port by issuing following command: 
+
+java -jar jenkins.war --httpPort=8181
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installing and Configuring Jenkins
+----------------------------------
+
+Open http://localhost:8080
+
+
+Install the git plugin
+
+
+Getting Started with Jenkins
+----------------------------
+
+===> Jenkins 2 on Windows
+===> Jenkins 2 on CentOS
+===> Jenkins 2 on Azure
+===> Jenkins as a Service in Windows
+===> plugins in Jenkins
+===> Uploading plugins in Jenkins
+===> proxy in Jenkins
+===> global settings in Jenkins
+===> JENKINS_HOME
+===> JENKINS_HOME directory
+===> ports for Jenkins
+===> JAVA_HOME in Jenkins
+===> Git in Jenkins
+===> ANT_HOME in Jenkins
+===> MAVEN_HOME in Jenkins
+===> GRADLE_HOME in Jenkins
+===> Creating a Freestyle job for Ant Project
+===> Creating a Maven Job for Maven Project
+
+
+Step 1 — Installing Jenkins
+
+add the repository key to the system.
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+append the Debian package repository address to the server’s sources.list:
+
+echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+run update so that apt-get will use the new repository:
+
+sudo apt-get update
+
+install Jenkins and its dependencies, including Java:
+
+sudo apt-get install jenkins
+
+Step 2 — Starting Jenkins
+
+sudo service jenkins start
+
+sudo service jenkins stop
+
+sudo service jenkins restart
+
+sudo service jenkins status
+
+
+Step 3 — Opening the Firewall
+
+sudo ufw allow 8080
+
+sudo ufw status
+
+
+Step 4 — Setting up Jenkins
+
+start at localhost:8080
+
+admin password path
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Jenkins war location
+
+/usr/share/jenkins
+
+Jenkins log location
+
+/var/log/jenkins
+
+Jenkins port conflict
+
+/etc/default
+
+check os version
+
+cat /etc/os-release
+
+
+
+

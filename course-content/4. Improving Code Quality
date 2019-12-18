@@ -1,0 +1,172 @@
+Improving Code Quality
+----------------------
+
+===> Analyzing Jenkins Metrics
+===> Track Broken Builds, Build Time and More
+===> Continuous delivery (CD) is a challenge for organizations
+===> Automating and optimizing the release process is tough
+===> CD is about reliability and speed
+===> Goal is to deliver a production-ready build from source code 	as quickly as possible
+===> The longer it takes to generate a production-ready build, the 	longer it takes for changes to make it out to customers
+===> Collecting metrics on CD helps you:
+		---> Track broken builds
+		---> Optimize the build pipeline
+		---> Make management decisions
+
+
+
+
+
+
+
+
+
+
+
+Jenkins with SonarQube
+----------------------
+
+---> updating center in SonarQube
+---> Quality gates, quality profiles, and rules in SonarQube
+---> Verifying HTML, CSS and JavaScript validity using SonarQube
+---> Verifying Java code using SonarQube
+---> Configuring SonarQube as a Windows service
+
+
+
+
+
+
+
+JUnit Plugin in Jenkins
+-----------------------
+
+The JUnit plugin provides a publisher that consumes XML test reports generated during the builds and provides some graphical visualization of the historical test results
+
+Configuration
+-------------
+
+===> Make Sure Depedencies and plugins are avaliable in POM.xml
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.5.2</version>
+			<scope>test</scope>
+	</dependency>
+
+<build>
+  <plugins>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M3</version>
+   </plugin>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-site-plugin</artifactId>
+    <version>3.8.2</version>
+   </plugin>
+  
+  <plugins>
+<build>
+
+<reporting>
+<plugins>
+  <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-surefire-report-plugin</artifactId>
+  </plugin>
+</reporting>
+
+===> Install JUnit Plugin
+
+===> The JUnit publisher is configured at the job level
+
+===> Go to your Job --> Configure --> Post Build Action -->
+     Publish JUnit Test Result Report --> 
+     Test Report XML Path = target/surefire-reports/*.xml
+
+
+===> Add a Publish JUnit test result report post build action.
+
+===> The configuration parameters include:
+		---> Test report XMLs.
+		---> Retain long standard output/error
+		---> Health report amplification factor
+		---> Allow empty results
+
+
+
+
+
+
+
+PMD and FindBugs for Static Code Analysis in Jenkins
+---------------------------------------
+
+Install HTML Publisher Plugin
+
+Make Sure pom.xml is update with:
+
+<reporting>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-pmd-plugin</artifactId>
+<version>3.11.0</version>
+</plugin>
+
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>findbugs-maven-plugin</artifactId>
+<version>3.0.4</version>
+<configuration>
+<effort>max</effort> <!-- medium -->
+</configuration>
+</plugin>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-report-plugin</artifactId>
+</plugin>
+</plugins>
+</reporting>
+
+
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.0.0-M3</version>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-site-plugin</artifactId>
+<version>3.8.2</version>
+</plugin>
+</plugins>
+</build>
+
+
+Go to you Job --> Configure --> Post-Build Actions -->
+Publish HTML Report --> HTML directory to Archive =
+target/site --> index page = index.html
+
+Go to Build --> Execute Shell =
+mvn clean install site
+java -cp /var/lib/jenkins/.m2/repository/dss/blockchain/0.0.1-SNAPSHOT/blockchain-0.0.1-SNAPSHOT.jar dss.blockchain.App
+
+
+
+
+
+
+
+
+
+
+
+

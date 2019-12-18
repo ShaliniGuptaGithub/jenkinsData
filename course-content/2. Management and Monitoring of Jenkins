@@ -1,0 +1,61 @@
+Management and Monitoring of Jenkins
+------------------------------------
+
+Master/agent architecture
+-------------------------
+
+	Install open ssh on machine
+		sudo apt update
+		sudo apt install openssh-server
+		sudo systemctl status ssh
+		sudo ufw allow ssh (ubuntu firewall allow)
+		ssh username@ip_address
+
+	Create Node
+		CONFIGURE AGENT -> LAUNCH METHOD -> Manually trusted key verification strategy - > SAVE.
+
+		
+
+Jenkins build jobs using Eclipse
+Backing up and restoring Jenkins
+Jenkins CLI
+Jenkins configuration from CLI
+Managing disk usage
+Shutdown Jenkins safely
+
+Monitoring Jenkins with JavaMelody
+----------------------------------
+	install Monitoring Plugin
+	Go to Manage Jenkins --> Monitoring of Jenkins Master
+
+Build Monitor View
+------------------
+
+Troubleshooting with JavaMelody
+-------------------------------
+
+Configuring mail notifications
+------------------------------
+	Install Email Notification Plugin
+	Install Extended Email Notification plugin
+	Install Editable Email Notification Plugin
+	configure these plugins in Post-Build-Action of Job. Also configure in global section	
+
+
+Signaling the need to archive
+-----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

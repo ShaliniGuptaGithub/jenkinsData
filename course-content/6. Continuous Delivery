@@ -1,0 +1,79 @@
+Continuous Delivery
+-------------------
+
+Archiving artifacts
+Copying an artifact from another build job
+Integrating Jenkins with Artifactory
+Deploying a WAR file from Jenkins to Tomcat
+Deploying a WAR file from Jenkins to AWS Beanstalk
+Deploying a WAR file from Jenkins to Azure App Services
+Promoting builds
+
+
+Step 1 : Download Tomcat from : https://tomcat.apache.org/download-70.cgi
+	 if you are using linux download tar.gz.
+	 if you are on windows down zip 
+
+Step 2:	Extract your downloaded file in the same place (Download folder)
+	
+Step 3: Go to your tomcat folder ==> go to conf folder ==> open tomcat-user.xml file.
+	add following user with roles. Save File
+
+	<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
+	<role rolename="manager-jmx"/>
+	<role rolename="manager-status"/>
+
+	<user username="umesh" password="mango" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+
+
+Step 4: start tomcat :
+		for windows : startup.bat
+		for linux   : sh startup.sh
+
+		(for shutdown tomcat command is sh shutdown.sh)
+
+Step 5: if you are facing port issue: go to conf folder
+	find file server.xml
+
+
+Step 6: create a maven web application for war 
+
+Step 7: push your code to git
+
+	git init
+	git remote add origin https://github.com/umeshJavaMentor/cgiweb.git
+	git add .
+	git commit -m "web app done"
+	git push origin master
+
+		
+  619  git remote -v
+
+  624  git remote set-url  origin https://github.com/umeshJavaMentor/cgi.git
+
+  625  git remote -v
+
+  626  git push origin master
+
+  629  git clone https://github.com/umeshJavaMentor/cgi.git
+
+mvn clean install site
+java -cp /var/lib/jenkins/.m2/repository/dss/blockchain/0.0.1-SNAPSHOT/blockchain-0.0.1-SNAPSHOT.jar dss.blockchain.App
+
+
+
+
+URL: https://cloudlabs.nuvepro.com/company/eduramp/home
+Username: ​jenktestuser2
+Password: ​Cloudlabs123$
+
+
+
+
+
+
+
+
+	
+

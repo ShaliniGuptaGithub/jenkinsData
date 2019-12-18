@@ -1,0 +1,12 @@
+Building Applications in Jenkins
+--------------------------------
+
+Configuring an Ant project for execution
+Configuring a Maven project for execution
+Configuring an Android project for execution
+Manipulating environmental variables
+Running Ant through Groovy in Maven
+Failed Jenkins jobs based on syntax errors
+Remotely triggering jobs through the Jenkins API
+
+

@@ -1,0 +1,245 @@
+1. Source Code Management
+----------------------
+
+===> GitHub
+===> BitBucket
+===> Perforce Helix
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Artifact Repositories
+---------------------
+
+===> Sonatype Nexus Repository
+===> JFrog Artifactory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Continuous Integration
+----------------------
+
+===> Servers
+===> Jenkins
+===> CircleCI
+===> GitLab
+===> Travis CI
+
+
+
+
+
+
+
+
+
+
+
+
+4. Continuous Delivery
+-------------------
+
+===> IBM UrbanCode
+===> Atlassian Bamboo
+===> CloudBees Jenkins Solutions
+===> CodeShip
+
+
+
+
+
+
+5. Application Release Automation
+------------------------------
+
+===> OpenMake Software
+===> XebiaLabs
+===> Puppet
+===> Electric Cloud
+===> CA Automic
+
+
+
+
+
+
+
+
+
+
+
+
+6. Infrastructure Automation
+-------------------------
+
+===> Chef
+===> AWS Opsworks
+===> SaltStack
+===> Terraform
+===> Puppet
+===> Ansible
+
+
+
+
+
+
+
+
+
+
+
+7. Continuous Delivery Management
+------------------------------
+
+===> Plutora Platform
+
+
+
+
+
+
+
+
+
+
+
+8. Log Management
+--------------
+
+===> Splunk
+===> SumoLogic
+===> Scalyr
+
+
+
+
+
+
+
+
+
+9. Monitoring
+----------
+
+===> ExtraHop
+===> Datadog
+===> SignalFX
+
+
+
+
+
+
+
+
+
+
+10. Alerting
+--------
+
+===> VictorOps
+===> PagerDuty
+===> OpsGenie
+
+
+
+
+
+
+
+
+
+11. ChatOps
+-------
+
+===> Slack
+===> HipChat
+===> Flock
+
+
+
+
+
+
+
+
+
+12. Database Configuration Automation Tools
+---------------------------------------
+
+===> DBMaestro
+===> Datical
+===> RedGate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13. Container Management
+--------------------
+
+===> Kubernetes
+===> Mesos and DC/OS
+===> Docker Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
